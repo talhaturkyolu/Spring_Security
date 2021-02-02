@@ -1,9 +1,8 @@
-package com.cinema.entity;
+package com.cybertek.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -37,12 +36,5 @@ public class Ticket extends BaseEntity {
         this.dateTime = dateTime;
     }
 
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "seatNumber=" + seatNumber +
-                ", rowNumber=" + rowNumber +
-                ", dateTime=" + dateTime +
-                '}';
-    }
+
 }

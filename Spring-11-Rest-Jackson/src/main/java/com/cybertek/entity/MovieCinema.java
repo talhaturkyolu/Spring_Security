@@ -1,4 +1,4 @@
-package com.cinema.entity;
+package com.cybertek.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -8,12 +8,11 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value={"hibernate_Lazy_Initializer"},ignoreUnknown = true)
 public class MovieCinema extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)

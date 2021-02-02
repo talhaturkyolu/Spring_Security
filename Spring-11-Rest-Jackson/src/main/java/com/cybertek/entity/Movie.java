@@ -1,6 +1,7 @@
-package com.cinema.entity;
-import com.cinema.enums.MovieState;
-import com.cinema.enums.MovieType;
+package com.cybertek.entity;
+
+import com.cybertek.enums.MovieState;
+import com.cybertek.enums.MovieType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,13 +12,12 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value={"hibernate_Lazy_Initializer"},ignoreUnknown = true)
 public class Movie extends BaseEntity {
 
     private String name;
@@ -40,8 +40,8 @@ public class Movie extends BaseEntity {
 
     @ManyToMany
     @JoinTable(name = "movie_genre_rel",
-            joinColumns = @JoinColumn(name="movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    joinColumns = @JoinColumn(name="movie_id"),
+    inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList = new ArrayList<>();
 
     public Movie(String name, LocalDate releaseDate, Integer duration,MovieType type, MovieState state, BigDecimal price) {
