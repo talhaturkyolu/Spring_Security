@@ -33,7 +33,7 @@ public class SecurityService implements UserDetailsService {
                 listAuthorities(foundUser));
     }
 
-    private User loadUser(String value){
+    public User loadUser(String value){
         boolean isEmail = value.contains("@");
         return isEmail? userService.readByEmail(value) : userService.readByUsername(value);
     }
