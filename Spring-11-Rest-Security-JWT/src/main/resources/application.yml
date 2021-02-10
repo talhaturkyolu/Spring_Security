@@ -11,7 +11,7 @@ spring:
     password: Tt545503.
     driver-class-name: org.postgresql.Driver
     initialization-mode: always
-    data: data.sql
+    data: classpath:data.sql
   jpa:
     properties:
      hibernate:
