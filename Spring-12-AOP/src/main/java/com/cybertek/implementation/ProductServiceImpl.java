@@ -6,13 +6,14 @@ import com.cybertek.service.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
 
-    public ProductServiceImpl(ProductRepository repository) {
-        this.productRepository = repository;
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
     @Override
@@ -21,14 +22,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> delete(Long id) {
+    public List<Product> delete(long id) {
         productRepository.deleteById(id);
         return productRepository.findAll();
     }
 
     @Override
-    public List<Product> updateProduct(Long id, Product product) {
-
+    public List<Product> updateProduct(long id, Product product) {
         Product obj = productRepository.findById(id).get();
         obj.setName(product.getName());
         productRepository.save(obj);
@@ -42,7 +42,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProduct(Long id) {
+    public Product getProduct(long id) {
+
         return productRepository.findById(id).get();
     }
 }
